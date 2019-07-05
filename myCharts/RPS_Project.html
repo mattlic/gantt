@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>High Level RPS in 30 Minutes Plan</title>
+	<style>
+		body {
+			font-family: sans-serif;
+			background: #ccc;
+		}
+		.container {
+			width: 80%;
+			margin: 0 auto;
+		}
+		/* custom class */
+		.gantt .bar-milestone .bar {
+			fill: tomato;
+		}
+	</style>
+	<link rel="stylesheet" href="frappe-gantt.css" />
+	<script src="frappe-gantt.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h2>RPS in 30 Minutes High Level Plan</h2>
+		<div class="gantt-target"></div>
+	</div>
+	<script>
+		var tasks = [
+			{
+				start: '2019-06-01',
+				end: '2019-07-28',
+				name: 'RPS Reliability (cloud)',
+				id: "Task 0",
+				progress: 50
+			},
+			{
+				start: '2019-06-11',
+				end: '2019-07-14',
+				name: 'RPS Cloud Infrastructure',
+				id: "Task 1",
+				progress: 25,
+			},
+			{
+				start: '2019-06-05',
+				end: '2019-09-20',
+				name: 'Modernize Tests Framework',
+				id: "Task 2",
+				progress: 05,
+			},			
+            {
+				start: '2019-06-15',
+				end: '2019-06-28',
+				name: 'First Modernized Tests',
+				id: "Task 3",
+				progress: 0,
+                dependencies: 'Task 2'
+            },
+			{
+				start: '2019-07-09',
+				end: '2019-09-09',
+				name: 'Product Teams Modernize Tests',
+				id: "Task 3",
+				progress: 0,
+				dependencies: 'Task 2'
+			},
+			{
+				start: '2019-06-08',
+				end: '2019-09-10',
+				name: 'Noise hacking',
+				id: "Task 4",
+				progress: 0,
+				dependencies: 'Task 2'
+			},
+			{
+				start: '2019-07-01',
+				end: '2019-08-11',
+				name: 'New Detection/Noise System',
+				id: "Task 5",
+				progress: 0,
+				dependencies: 'Task 1'
+			},
+			{
+				start: '2019-07-29',
+				end: '2019-07-29',
+				name: 'Adopt CloudRPS with existing tests (slow)',
+				id: "Task 6",
+				progress: 0,
+				custom_class: 'bar-milestone'
+			}
+		]
+		var gantt_chart = new Gantt(".gantt-target", tasks, {
+			on_click: function (task) {
+				console.log(task);
+			},
+			on_date_change: function(task, start, end) {
+				console.log(task, start, end);
+			},
+			on_progress_change: function(task, progress) {
+				console.log(task, progress);
+			},
+			on_view_change: function(mode) {
+				console.log(mode);
+			},
+			view_mode: 'Month',
+			language: 'en'
+		});
+		console.log(gantt_chart);
+	</script>
+</body>
+</html>
