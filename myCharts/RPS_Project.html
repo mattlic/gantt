@@ -13,8 +13,11 @@
 			margin: 0 auto;
 		}
 		/* custom class */
-		.gantt .bar-milestone .bar {
+		.gantt .bar-delayed .bar {
 			fill: tomato;
+		}
+		.gantt .bar-milestone .bar {
+			fill: rgb(157, 71, 255);
 		}
 	</style>
 	<link rel="stylesheet" href="RPS-gantt.css" />
@@ -41,53 +44,53 @@
 				id: "Task 0",
 				progress: 100
 			},			{
-				start: '2019-09-12',
-				end: '2019-09-19',
+				start: '2019-09-16',
+				end: '2019-09-30',
 				name: 'Dogfood RPS in Cloud (existing tests)',
 				id: "Task 9",
 				progress: 100
 			},
 			{
-				start: '2019-07-22',
-				end: '2019-10-20',
+				start: '2019-08-22',
+				end: '2019-11-15',
 				name: 'RPS Test Modernization',
 				id: "Task 2",
 				progress: 100
 			},			
 			{
 				start: '2019-09-02',
-				end: '2019-09-27',
+				end: '2019-10-20',
 				name: 'RPS Modern Test Specific Cloud Infrastructure',
 				id: "Task 3",
 				progress: 100
 			},
 			{
 				start: '2019-06-08',
-				end: '2019-10-30',
+				end: '2019-11-20',
 				name: 'Noise Reduction',
 				id: "Task 4",
 				progress: 100
 			},
 			{
-				start: '2019-09-19',
-				end: '2019-09-19',
-				name: 'Adopt CloudRPS with existing tests (slow)',
-				id: "Task 6",
+				start: '2019-09-30',
+				end: '2019-09-30',
+				name: 'Current plan Adopt CloudRPS with existing tests (slow)',
+				id: "Task 6",				
+				dependencies: 'Task 10',
 				custom_class: 'bar-milestone'
 			},
 			{
-				start: '2019-10-30',
-				end: '2019-10-30',
+				start: '2019-12-10',
+				end: '2019-12-10',
 				name: 'Adopt CloudRPS - modern tests',
 				id: "Task 7",
 				custom_class: 'bar-milestone'
 			},
 			{
-				start: '2019-12-29',
-				end: '2019-12-29',
+				start: '2020-02-20',
+				end: '2020-02-20',
 				name: 'No on-prem RPS runs',
 				id: "Task ",
-				dependencies: 'Task 7',
 				custom_class: 'bar-milestone'
 			}
 		]

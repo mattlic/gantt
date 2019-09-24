@@ -28,7 +28,7 @@
 .gantt .arrow {
   fill: none;
   stroke: rgb(202, 196, 196);
-  stroke-width: 0.4; }
+  stroke-width: 0.8; }
 
 .gantt .bar {
   fill: #b8c2cc;
